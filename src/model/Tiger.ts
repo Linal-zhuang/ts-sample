@@ -1,7 +1,7 @@
 import * as m from "mongoose"
 
 export interface TigerDoc {
-    _id: m.Types.ObjectId,
+    _id: m.Types.ObjectId | string,
     name: string,
     zooId: string,
     createdAt: Date,

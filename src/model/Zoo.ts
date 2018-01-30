@@ -1,7 +1,7 @@
 import * as m from "mongoose"
 
 export interface ZooDoc {
-    _id: m.Types.ObjectId,
+    _id: m.Types.ObjectId | string,
     name: string,
     createdAt: Date,
     updatedAt: Date

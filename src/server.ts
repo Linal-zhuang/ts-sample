@@ -7,19 +7,19 @@ import * as def from "./shared/def"
 
 export const router = express.Router()
 
-router.all("/*", (req, res, next) => {
+// router.all("/*", (req, res, next) => {
 
-    m.connection.on('connectd', () => {
+//     m.connection.on('connectd', () => {
 
-    })
-    if (m.connection.readyState !== 1 && m.connection.readyState !== 2) {
-        res.status(503).json({
-            Error: "could not connect to db",
-        });
-        return;
-    }
-    next();
-});
+//     })
+//     if (m.connection.readyState !== 1 && m.connection.readyState !== 2) {
+//         res.status(503).json({
+//             Error: "could not connect to db",
+//         });
+//         return;
+//     }
+//     next();
+// });
 
 router.get("/zoos", async (req, res) => {
     try {
@@ -36,13 +36,16 @@ router.get("/zoos", async (req, res) => {
     }
 })
 
-router.post("/zoos", async (req, res) => {
-    const zooName: string = req.body.zooName
+router.post("/zoos", async (req, res) => { 
+    const names: string[] = req.body
+    const nameDocs = names.map(e => {
+        return { name: e }
+    })
     try {
-        const zoo: Zoo.ZooDoc = await Zoo.Model.insertMany(zooName)
+        const zoos: Zoo.ZooDoc[] = await Zoo.Model.insertMany(nameDocs)
         res.status(201).json({
             success: true,
-            zoo
+            zoos
         })
     } catch (error) {
         res.status(500).json({
