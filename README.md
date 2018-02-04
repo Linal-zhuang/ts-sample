@@ -17,3 +17,7 @@ visit `http://localhost:8610/api/v1/zoos`
 
 * npm test
 * npm run ctest   # 覆盖率测试
+
+## release
+
+bash release.sh
