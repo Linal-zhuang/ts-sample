@@ -4,22 +4,7 @@ import * as Tiger from "./model/Tiger"
 import * as Zoo from "./model/Zoo"
 import * as def from "./shared/def"
 
-
 export const router = express.Router()
-
-// router.all("/*", (req, res, next) => {
-
-//     m.connection.on('connectd', () => {
-
-//     })
-//     if (m.connection.readyState !== 1 && m.connection.readyState !== 2) {
-//         res.status(503).json({
-//             Error: "could not connect to db",
-//         });
-//         return;
-//     }
-//     next();
-// });
 
 router.get("/zoos", async (req, res) => {
     try {
