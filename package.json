@@ -5,10 +5,12 @@
   "main": "./dist/index.js",
   "typings": "./src/index.ts",
   "scripts": {
-    "release": "node_modules/.bin/tsc",
-    "start": "node ./dist/index.js",
-    "test": "./node_modules/mocha/bin/mocha",
-    "ctest": "nyc mocha"
+    "dist": "node_modules/.bin/tsc",
+    "build": "node_modules/.bin/tsc ./**/*.ts -outDir build --target es2016 --module commonjs",
+    "test": "mocha",
+    "ctest": "nyc mocha",
+    "format": "node_modules/.bin/tsfmt -r"
+
   },
   "repository": {
     "type": "git",
@@ -21,28 +23,24 @@
   },
   "homepage": "https://github.com/ilyydy/ts-sample#readme",
   "dependencies": {
-    "@types/body-parser": "^1.16.8",
-    "@types/express": "^4.11.0",
-    "@types/mongoose": "^5.0.0",
-    "@types/source-map-support": "^0.4.0",
-    "@types/yargs": "^10.0.1",
-    "body-parser": "^1.18.2",
-    "express": "^4.15.2",
-    "mongoose": "^5.0.2",
-    "source-map-support": "^0.5.3",
-    "yargs": "^11.0.0"
+    "@types/source-map-support": "^0.4.1",
+    "@types/yargs": "^11.1.1",
+    "logger": "git+https://git@github.com/lteam-typescript/logger.git#v3",
+    "source-map-support": "^0.5.6",
+    "yargs": "^12.0.1"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.2",
-    "@types/mocha": "^2.2.47",
-    "@types/supertest": "^2.0.4",
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^8.10.21",
     "chai": "^4.1.2",
-    "mocha": "^5.0.0",
-    "mocha-typescript": "^1.1.12",
-    "nyc": "^11.4.1",
-    "supertest": "^3.0.0",
-    "ts-node": "^4.1.0",
-    "typescript": "^2.6.2"
+    "mocha": "^5.2.0",
+    "mocha-typescript": "^1.1.17",
+    "nyc": "^12.0.2",
+    "ts-lint": "^4.5.1",
+    "ts-node": "^7.0.0",
+    "typescript": "^2.9.2",
+    "typescript-formatter": "^7.2.2"
   },
   "nyc": {
     "check-coverage": true,
