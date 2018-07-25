@@ -10,7 +10,6 @@
     "test": "mocha",
     "ctest": "nyc mocha",
     "format": "node_modules/.bin/tsfmt -r"
-
   },
   "repository": {
     "type": "git",
