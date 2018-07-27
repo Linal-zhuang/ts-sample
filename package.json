@@ -9,6 +9,7 @@
     "build": "node_modules/.bin/tsc ./**/*.ts -outDir build --target es2016 --module commonjs",
     "test": "mocha",
     "ctest": "nyc mocha",
+    "fix": " node_modules/.bin/tslint -c tslint.json -p tsconfig.json --fix",
     "format": "node_modules/.bin/tsfmt -r"
   },
   "repository": {
@@ -36,8 +37,8 @@
     "mocha": "^5.2.0",
     "mocha-typescript": "^1.1.17",
     "nyc": "^12.0.2",
-    "ts-lint": "^4.5.1",
     "ts-node": "^7.0.0",
+    "tslint": "^5.11.0",
     "typescript": "^2.9.2",
     "typescript-formatter": "^7.2.2"
   },
