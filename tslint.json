@@ -29,11 +29,13 @@
         "class-name": true,
         "curly": [true, "ignore-same-line"],
         "cyclomatic-complexity": [true, 50],
+        "forin": false,
         "interface-name": [true, "never-prefix"],
         "interface-over-type-literal": false,
         "jsdoc-format": true,
         "label-position": true,
         "linebreak-style": [true, "CRLF"],
+        "max-classes-per-file": [true, 3, "exclude-class-expressions"],
         "max-file-line-count": [true, 200],
         "max-line-length": [true, {
             "limit": 120,
@@ -95,6 +97,7 @@
             "allow-leading-underscore",
             "allow-trailing-underscore"
         ]
+
     },
     "rulesDirectory": []
 }
