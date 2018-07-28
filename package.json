@@ -8,10 +8,10 @@
     "startTs": "node_modules/.bin/ts-node ./src/index.ts",
     "startJs": "node ./dist/index.js",
     "dist": "node_modules/.bin/tsc",
-    "build": "node_modules/.bin/tsc ./**/*.ts -outDir build --target es2016 --module commonjs",
+    "build": "node_modules/.bin/tsc -rootDir ./ -outDir build --target es2016 --module commonjs --esModuleInterop true",
     "test": "mocha",
     "ctest": "nyc mocha",
-    "lint": "node_modules/.bin/tslint -c tslint.json **/*.ts --fix",
+    "lint": "node_modules/.bin/tslint -c tslint.json ./src/**/*.ts --fix",
     "format": "node_modules/.bin/tsfmt -r"
   },
   "repository": {
