@@ -1,4 +1,3 @@
-
 import yargs from "yargs"
 
 const ARGV = yargs.argv

@@ -7,11 +7,11 @@
   "scripts": {
     "startTs": "node_modules/.bin/ts-node ./src/index.ts",
     "startJs": "node ./dist/index.js",
-    "dist": "node_modules/.bin/tsc",
-    "build": "node_modules/.bin/tsc -rootDir ./ -outDir build --target es2016 --module commonjs --esModuleInterop true",
+    "dist": "npm run build; mkdir dist; mv build/src/* dist/; rm -rf build",
+    "build": "node_modules/.bin/tsc",
     "test": "mocha",
     "ctest": "nyc mocha",
-    "lint": "node_modules/.bin/tslint -c tslint.json ./src/**/*.ts --fix",
+    "lint": "node_modules/.bin/tslint -c tslint.json -p tsconfig.json --fix",
     "format": "node_modules/.bin/tsfmt -r"
   },
   "repository": {

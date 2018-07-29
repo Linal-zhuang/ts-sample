@@ -18,15 +18,18 @@
             ["Number", "Use 'number' instead."],
             ["Boolean", "Use 'boolean' instead."]
         ],
+        "align": [true, "parameters", "statements", "elements"],
         "class-name": true,
         "curly": [true, "ignore-same-line"],
         "cyclomatic-complexity": [true, 50],
+        "eofline": true,
         "forin": false,
+        "indent": [true, "spaces", 4],
         "interface-name": [true, "never-prefix"],
         "interface-over-type-literal": false,
         "jsdoc-format": true,
         "label-position": true,
-        "linebreak-style": [true, "CRLF"],
+        "linebreak-style": [true, "LF"],
         "max-classes-per-file": [true, 3, "exclude-class-expressions"],
         "max-file-line-count": [true, 200],
         "max-line-length": [true, {
@@ -67,6 +70,7 @@
         "prefer-for-of": true,
         "prefer-object-spread": true,
         "prefer-while": true,
+        "promise-function-async": true,
         "quotemark": [true, "double", "avoid-escape"],
         "radix": true,
         "semicolon": [true, "never"],
@@ -87,7 +91,8 @@
             "check-format",
             "ban-keywords",
             "allow-leading-underscore",
-            "allow-trailing-underscore"
+            "allow-trailing-underscore",
+            "allow-snake-case"
         ]
 
     },
