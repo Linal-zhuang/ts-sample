@@ -1,6 +1,16 @@
 # ts-sample
 
-## tslint
+```sh
+npm install
+
+# 使用 tslint fix 存在的 error，某些 error 可能无法自动修复，需要手动 fix
+node_modules/.bin/tslint -c tslint.json -p tsconfig.json --fix
+
+# 使用 typescript-formatter
+node_modules/.bin/tsfmt -r
+```
+
+## tslint.json 规则配置
 
 - 每个文件最长 200 行， `max-file-line-count`
 - 每行最长 120 个字符， `max-line-length`
